@@ -1,5 +1,8 @@
+@extends('layouts.layouts')
+
+@section('content')
 <h1>投稿一覧</h1>
-<table>
+<table class="table">
     <tr>
         <th>店舗名</th>
         <th>評価</th>
@@ -15,3 +18,4 @@
     </tr>
     @endforeach
 </table>
+@endsection
