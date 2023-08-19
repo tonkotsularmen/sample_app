@@ -16,4 +16,8 @@ class ContentController extends Controller
     function show(Content $content){
         return view("contents.show", compact("content"));
     }
+    //
+    public function create(){
+        return view("contents.create");
+    }
 }
