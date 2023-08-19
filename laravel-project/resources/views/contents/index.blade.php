@@ -8,6 +8,7 @@
         <th>評価</th>
         <th>スタッフ</th>
         <th>電話番号</th>
+        <th>リンク</th>
     </tr>
     @foreach($contents as $content)
     <tr>
@@ -15,6 +16,7 @@
         <td>{{ $content->star }}</td>
         <td>{{ $content->gym_staff }}</td>
         <td>{{ $content->gym_tel_number}}</td>
+        <td><a href="{{route('contents.show', $content)}}" class="btn btn-info">詳細</a></td>
     </tr>
     @endforeach
 </table>

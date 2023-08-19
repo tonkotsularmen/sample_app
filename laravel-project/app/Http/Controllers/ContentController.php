@@ -13,4 +13,7 @@ class ContentController extends Controller
         return view("contents.index", compact("contents"));
     }
     //
+    function show(Content $content){
+        return view("contents.show", compact("content"));
+    }
 }
