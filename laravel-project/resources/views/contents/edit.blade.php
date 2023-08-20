@@ -13,11 +13,9 @@
     <div class="form-group">
         <label for="gym_clean">清潔感</label>
         <select class="custom-select" name="gym_clean">
-            <option value="とても綺麗" {{($content->gym_clean == "とても綺麗")? "selected":""}}>とても綺麗</option>
-            <option value="まあまあ綺麗" {{($content->gym_clean == "まあまあ綺麗")? "selected":""}}>まあまあ綺麗</option>
-            <option value="ふつう" {{($content->gym_clean == "ふつう")? "selected":""}}>ふつう</option>
-            <option value="あまり綺麗ではない" {{($content->gym_clean == "あまり綺麗ではない")? "selected":""}}>あまり綺麗ではない</option>
-            <option value="綺麗ではない" {{($content->gym_clean == "綺麗ではない")? "selected":""}}>綺麗ではない</option>
+            @foreach(App\Content::$gym_cleans as $gym_clean)
+            <option value="{{$gym_clean}}" {{($content->$gym_clean == $gym_clean)? "selected":""}}>{{$gym_clean}}</option>
+            @endforeach
         </select>
     </div>
 

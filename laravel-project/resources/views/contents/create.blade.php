@@ -12,11 +12,9 @@
     <div class="form-group">
         <label for="gym_clean">清潔感</label>
         <select class="custom-select" name="gym_clean">
-            <option value="とても綺麗">とても綺麗</option>
-            <option value="まあまあ綺麗">まあまあ綺麗</option>
-            <option value="ふつう">ふつう</option>
-            <option value="あまり綺麗ではない">あまり綺麗ではない</option>
-            <option value="綺麗ではない">綺麗ではない</option>
+            @foreach(App\Content::$gym_cleans as $gym_clean)
+            <option value="{{$gym_clean}}">{{$gym_clean}}</option>
+            @endforeach
         </select>
     </div>
 

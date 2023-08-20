@@ -14,13 +14,13 @@
     </tr>
 
     <tr>
-        <th>スタッフ</th>
-        <td>{{ $content->gym_staff }}</td>
+        <th>店舗の清潔感</th>
+        <td>{{ $content->gym_clean}}</td>
     </tr>
 
     <tr>
-        <th>店舗の清潔感</th>
-        <td>{{ $content->gym_clean}}</td>
+        <th>スタッフ</th>
+        <td>{{ $content->gym_staff }}</td>
     </tr>
 
     <tr>
