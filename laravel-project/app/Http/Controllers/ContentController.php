@@ -27,13 +27,7 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         $content = new Content();
-        $content->gym_name = $request->input("gym_name");
-        $content->gym_clean = $request->input("gym_clean");
-        $content->gym_staff = $request->input("gym_staff");
-        $content->gym_user = $request->input("gym_user");
-        $content->gym_beginner = $request->input("gym_beginner");
-        $content->star = $request->input("star");
-        $content->memo = $request->input("memo");
+        $content->fill($request->all());
         $content->save();
 
         return redirect()->route('contents.show', $content);
@@ -44,13 +38,7 @@ class ContentController extends Controller
     }
     public function update(Request $request, Content $content)
     {
-        $content->gym_name = $request->input("gym_name");
-        $content->gym_clean = $request->input("gym_clean");
-        $content->gym_staff = $request->input("gym_staff");
-        $content->gym_user = $request->input("gym_user");
-        $content->gym_beginner = $request->input("gym_beginner");
-        $content->star = $request->input("star");
-        $content->memo = $request->input("memo");
+        $content->fill($request->all());
         $content->save();
 
         return redirect()->route('contents.show', $content);

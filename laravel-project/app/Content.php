@@ -25,4 +25,7 @@ class Content extends Model
     static $stars = [
         "5", "4", "3", "2", "1"
     ];
+    protected $fillable = [
+        "gym_name", "gym_clean", "gym_staff", "gym_user", "gym_beginner", "star", "memo"
+    ];
 }
