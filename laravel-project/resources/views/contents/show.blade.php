@@ -9,11 +9,6 @@
     </tr>
 
     <tr>
-        <th>評価</th>
-        <td>{{ $content->star }}</td>
-    </tr>
-
-    <tr>
         <th>店舗の清潔感</th>
         <td>{{ $content->gym_clean}}</td>
     </tr>
@@ -31,6 +26,11 @@
     <tr>
         <th>初心者におすすめ</th>
         <td>{{ $content->gym_beginner}}</td>
+    </tr>
+
+    <tr>
+        <th>総合評価</th>
+        <td>{{ $content->star }}</td>
     </tr>
 
     <tr>
