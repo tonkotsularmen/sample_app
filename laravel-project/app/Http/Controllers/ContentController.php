@@ -42,4 +42,22 @@ class ContentController extends Controller
     {
         return view("contents.edit", compact("content"));
     }
+    public function update(Request $request, Content $content)
+    {
+        $content->gym_name = $request->input("gym_name");
+        $content->gym_clean = $request->input("gym_clean");
+        $content->gym_staff = $request->input("gym_staff");
+        $content->gym_user = $request->input("gym_user");
+        $content->gym_beginner = $request->input("gym_beginner");
+        $content->star = $request->input("star");
+        $content->memo = $request->input("memo");
+        $content->save();
+
+        return redirect()->route('contents.show', $content);
+    }
+    public function destroy(Content $content)
+    {
+        $content->delete();
+        return redirect()->route('contents.index');
+    }
 }

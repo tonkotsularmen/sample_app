@@ -44,4 +44,10 @@
     </tr>
 </table>
 <a href="{{route('contents.index')}}" class="btn btn-secondary">一覧へ</a>
+<a href="{{route('contents.edit', $content)}}" class="btn btn-warning">編集</a>
+<form action="/contents/{{$content->id}}" method="POST" style="display: inline;">
+    @method("DELETE")
+    @csrf
+    <button type="submit" class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>削除</button>
+</form>
 @endsection
