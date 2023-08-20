@@ -70,6 +70,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">投稿</button>
+    <a href="{{route('contents.index')}}" class="btn btn-secondary">戻る</a>
 
 </form>
 @endsection
