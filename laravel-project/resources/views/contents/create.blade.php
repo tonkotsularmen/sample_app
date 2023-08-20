@@ -21,44 +21,36 @@
     <div class="form-group">
         <label for="gym_staff">スタッフの対応</label>
         <select class="custom-select" name="gym_staff">
-            <option value="とても丁寧">とても丁寧</option>
-            <option value="まあまあ丁寧">まあまあ丁寧</option>
-            <option value="ふつう">ふつう</option>
-            <option value="あまり丁寧ではない">あまり丁寧ではない</option>
-            <option value="丁寧ではない">丁寧ではない</option>
+            @foreach(App\Content::$gym_staffs as $gym_staff)
+            <option value="{{$gym_staff}}">{{$gym_staff}}</option>
+            @endforeach
         </select>
     </div>
 
     <div class="form-group">
         <label for="gym_user">利用者のマナー</label>
         <select class="custom-select" name="gym_user">
-            <option value="5">とても良い</option>
-            <option value="4">まあまあ良い</option>
-            <option value="3">ふつう</option>
-            <option value="2">あまり良くない</option>
-            <option value="1">良くない</option>
+            @foreach(App\Content::$gym_users as $gym_user)
+            <option value="{{$gym_user}}">⭐️{{$gym_user}}</option>
+            @endforeach
         </select>
     </div>
 
     <div class="form-group">
         <label for="gym_beginner">初心者におすすめか</label>
         <select class="custom-select" name="gym_beginner">
-            <option value="5">とてもおすすめ</option>
-            <option value="4">まあまあおすすめ</option>
-            <option value="3">ふつう</option>
-            <option value="2">あまりおすすめしない</option>
-            <option value="1">おすすめしない</option>
+            @foreach(App\Content::$gym_beginners as $gym_beginner)
+            <option value="{{$gym_beginner}}">⭐️{{$gym_beginner}}</option>
+            @endforeach
         </select>
     </div>
 
     <div class="form-group">
         <label for="star">5段階評価</label>
         <select class="custom-select" name="star">
-            <option value="5">5</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1</option>
+            @foreach(App\Content::$stars as $star)
+            <option value="{{$star}}">⭐️{{$star}}</option>
+            @endforeach
         </select>
     </div>
 

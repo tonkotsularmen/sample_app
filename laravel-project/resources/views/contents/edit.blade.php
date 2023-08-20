@@ -22,44 +22,36 @@
     <div class="form-group">
         <label for="gym_staff">スタッフの対応</label>
         <select class="custom-select" name="gym_staff">
-            <option value="とても丁寧" {{($content->gym_staff == "とても丁寧")? "selected":""}}>とても丁寧</option>
-            <option value="まあまあ丁寧" {{($content->gym_staff == "まあまあ丁寧")? "selected":""}}>まあまあ丁寧</option>
-            <option value="ふつう" {{($content->gym_staff == "ふつう")? "selected":""}}>ふつう</option>
-            <option value="あまり丁寧ではない" {{($content->gym_staff == "あまり丁寧ではない")? "selected":""}}>あまり丁寧ではない</option>
-            <option value="丁寧ではない" {{($content->gym_staff == "丁寧ではない")? "selected":""}}>丁寧ではない</option>
+            @foreach(App\Content::$gym_staffs as $gym_staff)
+            <option value="{{$gym_staff}}" {{($content->$gym_staff == $gym_staff)? "selected":""}}>{{$gym_staff}}</option>
+            @endforeach
         </select>
     </div>
 
     <div class="form-group">
         <label for="gym_user">利用者のマナー</label>
         <select class="custom-select" name="gym_user">
-            <option value="5" {{($content->gym_user == "とても良い")? "selected":""}}>とても良い</option>
-            <option value="4" {{($content->gym_user == "まあまあ良い")? "selected":""}}>まあまあ良い</option>
-            <option value="3" {{($content->gym_user == "ふつう")? "selected":""}}>ふつう</option>
-            <option value="2" {{($content->gym_user == "あまり良くない")? "selected":""}}>あまり良くない</option>
-            <option value="1" {{($content->gym_user == "良くない")? "selected":""}}>良くない</option>
+            @foreach(App\Content::$gym_users as $gym_user)
+            <option value="{{$gym_user}}" {{($content->$gym_user == $gym_user)? "selected":""}}>⭐️{{$gym_user}}</option>
+            @endforeach
         </select>
     </div>
 
     <div class="form-group">
         <label for="gym_beginner">初心者におすすめか</label>
         <select class="custom-select" name="gym_beginner">
-            <option value="5" {{($content->gym_user == "とてもおすすめ")? "selected":""}}>とてもおすすめ</option>
-            <option value="4" {{($content->gym_user == "まあまあおすすめ")? "selected":""}}>まあまあおすすめ</option>
-            <option value="3" {{($content->gym_user == "ふつう")? "selected":""}}>ふつう</option>
-            <option value="2" {{($content->gym_user == "あまりおすすめしない")? "selected":""}}>あまりおすすめしない</option>
-            <option value="1" {{($content->gym_user == "おすすめしない")? "selected":""}}>おすすめしない</option>
+            @foreach(App\Content::$gym_beginners as $gym_beginner)
+            <option value="{{$gym_beginner}}" {{($content->$gym_beginner == $gym_beginner)? "selected":""}}>⭐️{{$gym_beginner}}</option>
+            @endforeach
         </select>
     </div>
 
     <div class="form-group">
         <label for="star">5段階評価</label>
         <select class="custom-select" name="star">
-            <option value="5" {{($content->gym_user == "5")? "selected":""}}>5</option>
-            <option value="4" {{($content->gym_user == "4")? "selected":""}}>4</option>
-            <option value="3" {{($content->gym_user == "3")? "selected":""}}>3</option>
-            <option value="2" {{($content->gym_user == "2")? "selected":""}}>2</option>
-            <option value="1" {{($content->gym_user == "1")? "selected":""}}>1</option>
+            @foreach(App\Content::$stars as $star)
+            <option value="{{$star}}" {{($content->$star == $star)? "selected":""}}>⭐️{{$star}}</option>
+            @endforeach
         </select>
     </div>
 
