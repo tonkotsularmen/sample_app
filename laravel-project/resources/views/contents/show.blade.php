@@ -19,11 +19,6 @@
     </tr>
 
     <tr>
-        <th>電話番号</th>
-        <td>{{ $content->gym_tel_number}}</td>
-    </tr>
-
-    <tr>
         <th>店舗の清潔感</th>
         <td>{{ $content->gym_clean}}</td>
     </tr>
