@@ -38,4 +38,8 @@ class ContentController extends Controller
 
         return redirect()->route('contents.show', $content);
     }
+    public function edit(Content $content)
+    {
+        return view("contents.edit", compact("content"));
+    }
 }
