@@ -20,3 +20,5 @@ Route::resource("contents", "ContentController");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/contents', 'ContentController@index')->name('contents.index');

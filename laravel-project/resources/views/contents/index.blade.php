@@ -2,7 +2,14 @@
 
 @section('content')
 <h1>投稿一覧</h1>
-<a href="{{route('contents.create')}}" class="btn btn-success">+投稿</a>
+
+<a href="{{route('contents.create')}}" class="mb-2 btn btn-success">+投稿</a>
+
+<form action="{{ route('contents.index')}}" method="GET">
+    <input type="text" name="keyword" value="{{ $keyword }}">
+    <input type="submit" value="検索">
+</form>
+
 <table class="table">
     <tr>
         <th>店舗名</th>
@@ -21,7 +28,7 @@
         <td>{{ $content->gym_user}}</td>
         <td>{{ $content->gym_beginner}}</td>
         <td>{{ $content->star }}</td>
-        <td><a href="{{route('contents.show', $content)}}" class="btn btn-info">詳細</a></td>
+        <td><a href="{{route('contents.show', $content)}}" class="btn btn-outline-info">詳細</a></td>
     </tr>
     @endforeach
 </table>

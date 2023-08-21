@@ -9,16 +9,25 @@ use Illuminate\Http\Request;
 
 class ContentController extends Controller
 {
-    public function _construct()
-    {
-        $this->middleware('auth');
-    }
 
-    function index()
+    // public function __construct()
+    // {
+    // $this->middleware('auth');
+    // }
+
+    function index(Request $request)
     {
-        $contents = Content::all();
+        $keyword = $request->input('keyword');
+
+        $query = Content::query();
+
+        if (!empty($keyword)) {
+            $query->where('gym_name', 'LIKE', "%{$keyword}%");
+        }
+
+        $contents = $query->get();
         # 使用するビューファイルの指定
-        return view("contents.index", compact("contents"));
+        return view("contents.index", compact("contents", 'keyword'));
     }
 
 
