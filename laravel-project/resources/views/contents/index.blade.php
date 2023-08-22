@@ -28,7 +28,7 @@
         <td>{{ $content->gym_user}}</td>
         <td>{{ $content->gym_beginner}}</td>
         <td>{{ $content->star }}</td>
-        <td><a href="{{route('contents.show', $content)}}" class="btn btn-outline-info">詳細</a></td>
+        <td><a href="{{route('contents.show', $content)}}" class="bg-indigo-700 font-semibold text-white py-2 px-3 rounded">詳細</a></td>
     </tr>
     @endforeach
 </table>
